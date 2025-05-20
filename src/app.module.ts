@@ -10,7 +10,7 @@ import { JogosModule } from './jogos/jogos.module';
 import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [ConfigModule.forRoot({isGlobal:true}], UsuariosModule, ProfessoresModule, EstudantesModule, DisciplinasModule, MatriculasModule, JogosModule],
+  imports: [ConfigModule.forRoot({isGlobal:true}), UsuariosModule, ProfessoresModule, EstudantesModule, DisciplinasModule, MatriculasModule, JogosModule],
   controllers: [AppController],
   providers: [AppService],
 })
