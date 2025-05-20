@@ -7,9 +7,10 @@ import { EstudantesModule } from './estudantes/estudantes.module';
 import { DisciplinasModule } from './disciplinas/disciplinas.module';
 import { MatriculasModule } from './matriculas/matriculas.module';
 import { JogosModule } from './jogos/jogos.module';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [UsuariosModule, ProfessoresModule, EstudantesModule, DisciplinasModule, MatriculasModule, JogosModule],
+  imports: [ConfigModule.forRoot({isGlobal:true}], UsuariosModule, ProfessoresModule, EstudantesModule, DisciplinasModule, MatriculasModule, JogosModule],
   controllers: [AppController],
   providers: [AppService],
 })
