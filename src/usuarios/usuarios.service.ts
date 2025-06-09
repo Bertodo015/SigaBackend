@@ -32,12 +32,12 @@ export class UsuariosService {
         return await prisma.usuario.create({ data });
     }
     // Método para buscar todos os usuários cadastrados
-    async findAll() {
+    async findAllSafe() {
         // Utiliza `findMany` do Prisma para retornar todos os registros da tabela`usuario`
         return await prisma.usuario.findMany();
     }
     // Método para buscar um único usuário pelo ID
-    async findOne(id: number) {
+    async findAllSafe(id: number) {
         // Utiliza `findUnique` com filtro `where` para buscar um usuário com o ID específico
         return await prisma.usuario.findUnique({ where: { id } });
     }

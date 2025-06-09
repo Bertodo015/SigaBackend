@@ -28,7 +28,7 @@ export class UsuariosController {
     @UseGuards(AuthGuard('jwt'))
     @Get(':id')
     findOne(@Param('id') id: string) {
-        return this.usuariosService.findOne(+id);
+        return this.usuariosService.findAllSafe(+id);
     }
     // Rota protegida: PUT /usuarios/:id → atualiza um usuário
     @UseGuards(AuthGuard('jwt'))
